@@ -1,0 +1,12 @@
+Camera 和相机相关的脚本
+    CameraFollow 相机跟随
+Door 和门（终点）相关的脚本
+    DoorOpen 判断解谜完成、门开启逻辑
+Planets 和星球相关的脚本
+    Editor Cursor自己创建的编辑器修改脚本
+        PlanetVisualizerEditor 用于在编辑器实时显示星球外观
+    GravityAreaShow 重力范围的显示控制
+    ImageManager Cursor自行创建，图片管理器（未启用）
+    PlanetData Cursor自行创建，星球数据（未启用）
+    PlanetGravity 星球对靠近物体的重力作用
+    PlanetGravityShift 星球重力状态切换

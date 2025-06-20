@@ -6,14 +6,33 @@ using UnityEngine.EventSystems;
 public class PlanetGravityShift : MonoBehaviour, IPointerDownHandler
 {
     private PlanetGravity planetGravity;
+    private SpriteRenderer balancedEffect;
+    private SpriteRenderer excludeEffect;
     void Start()
     {
         planetGravity = transform.Find("GravityArea").GetComponent<PlanetGravity>();
+        balancedEffect = transform.Find("BalancedEffect").GetComponent<SpriteRenderer>();
+        excludeEffect = transform.Find("ExcludeEffect").GetComponent<SpriteRenderer>();
     }
 
    public void OnPointerDown(PointerEventData eventData)
    {
         planetGravity.gravityState = (GravityState)(((int)planetGravity.gravityState + 1) % 3);
         Debug.Log("重力模式切换为" + planetGravity.gravityState);
+        if(planetGravity.gravityState == GravityState.Balanced)
+        {
+            balancedEffect.enabled = true;
+            excludeEffect.enabled = false;
+        }
+        else if(planetGravity.gravityState == GravityState.Exclude)
+        {
+            excludeEffect.enabled = true;
+            balancedEffect.enabled = false;
+        }
+        else
+        {
+            balancedEffect.enabled = false;
+            excludeEffect.enabled = false;
+        }
    }
 }

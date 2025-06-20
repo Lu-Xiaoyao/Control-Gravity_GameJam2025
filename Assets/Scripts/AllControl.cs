@@ -22,6 +22,7 @@ public class AllControl : MonoBehaviour
         public int deathCount = 0;
         public float gravityExtentMax = 0.5f;
         public float gravityExtentMin = 0.05f;
+        public float gravityAreaShowTime = 3f;
     }
 
 }
