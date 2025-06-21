@@ -31,9 +31,9 @@ public class PlanetCustom : MonoBehaviour
     [SerializeField] private CircleCollider2D planetCollider;
     [SerializeField] private CircleCollider2D gravityCollider;
 
-    void Start()
+    void Awake()
     {
-        planetGravity = transform.Find("GravityArea").GetComponent<PlanetGravity>();
+        //planetGravity = transform.Find("GravityArea").GetComponent<PlanetGravity>();
         
         // 获取碰撞器组件
         if (planetCollider == null)
@@ -69,7 +69,7 @@ public class PlanetCustom : MonoBehaviour
         transform.localScale = new Vector3(planetSize, planetSize, 1);
         transform.Find("GravityArea").localScale = new Vector3(gravitySize, gravitySize, 1);
         gravityExtent = Random.Range(GameManager.Instance.gravityExtentMin, GameManager.Instance.gravityExtentMax);
-        planetGravity.gravityExtent = gravityExtent;
+        //planetGravity.gravityExtent = gravityExtent;
         
         // 应用碰撞器设置
         ApplyColliderSettings();

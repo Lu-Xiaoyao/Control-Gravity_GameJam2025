@@ -19,6 +19,7 @@ public class InputHandle : MonoBehaviour
     [SerializeField] private AreaShow areaShow;  // 懒得Find了，记得拖拽赋值
     [SerializeField] private ResetPlayer resetPlayer;
     [SerializeField] private CameraSize cameraSize;
+    [SerializeField] private PlayerSpeedUp playerSpeedUp;
     void Awake()
     {
         if(Instance == null)
@@ -50,5 +51,13 @@ public class InputHandle : MonoBehaviour
         {
             cameraSize.CameraEnlarge();
         }
+        if(inputActions.player.SpeedUp.triggered)
+        {
+            playerSpeedUp.SpeedUp();
+        }
+    }
+    void OnEnabled()
+    {
+        inputActions.player.Enable();
     }
 }

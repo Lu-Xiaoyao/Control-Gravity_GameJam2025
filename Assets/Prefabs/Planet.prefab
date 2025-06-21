@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 4980291829564310093}
   - component: {fileID: 6142401258471012647}
   - component: {fileID: 4489828245513538286}
+  - component: {fileID: 2068247777834773875}
   - component: {fileID: 6448922638089327894}
   - component: {fileID: 498721598869934103}
-  - component: {fileID: 2068247777834773875}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -291,34 +291,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07, y: 0.1}
   serializedVersion: 2
-  m_Radius: 5
---- !u!114 &6448922638089327894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7511982263304135963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0a646c9c7cec1409c4369c76099583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &498721598869934103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7511982263304135963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48effdcc8b962b439c62dbe4f7b33d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spinSpeed: 0
+  m_Radius: 3.56
 --- !u!114 &2068247777834773875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +322,31 @@ MonoBehaviour:
   colliderSettings: []
   planetCollider: {fileID: 4489828245513538286}
   gravityCollider: {fileID: 5027448625259042986}
+--- !u!114 &6448922638089327894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511982263304135963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0a646c9c7cec1409c4369c76099583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &498721598869934103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511982263304135963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48effdcc8b962b439c62dbe4f7b33d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 0
 --- !u!1 &7550345258661863869
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +485,8 @@ MonoBehaviour:
   gravityExtent: 0
   moveSpeed: 0
   startGravityState: 0
+  direction: {x: 0, y: 0}
+  angleDirection: {x: 0, y: 0}
 --- !u!114 &172493203327646591
 MonoBehaviour:
   m_ObjectHideFlags: 0

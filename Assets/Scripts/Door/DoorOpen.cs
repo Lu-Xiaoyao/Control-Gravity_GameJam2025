@@ -34,6 +34,10 @@ public class DoorOpen : MonoBehaviour
         {
             Invoke("NextLevel", 1f);
         }
+        else if(other.gameObject.CompareTag("Player") && !doorOpen)
+        {
+            Debug.Log("Door is closed");
+        }
     }
 
     void NextLevel()
