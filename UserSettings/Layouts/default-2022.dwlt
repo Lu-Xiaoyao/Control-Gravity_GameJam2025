@@ -248,12 +248,21 @@ MonoBehaviour:
     width: 1364.6666
     height: 533.3333
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 50
 =======
   m_MinSize: {x: 403, y: 221}
+=======
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 47
+  draggingID: 0
+--- !u!114 &11
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,10 +272,14 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Name: GameView
 =======
   m_Name: SceneView
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+  m_Name: SceneView
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -278,6 +291,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
@@ -285,13 +299,18 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 =======
+=======
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 1
+<<<<<<< HEAD
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,15 +357,20 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts
 =======
     - Assets/Scenes
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    - Assets/Scenes
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_StartGridSize: 96
   m_LastFolders:
@@ -358,11 +382,18 @@ MonoBehaviour:
   - Assets/Scenes
   m_LastFoldersGridSize: 16
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Scenes
+  m_LastFoldersGridSize: 16
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
   m_LastProjectPath: D:\Unity6Projects\Control Gravity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 55}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: ae690000
     m_LastClickedID: 27054
@@ -372,6 +403,11 @@ MonoBehaviour:
     m_LastClickedID: 26114
     m_ExpandedIDs: 00000000e26500000466000000ca9a3bffffff7f
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    m_SelectedIDs: 02660000
+    m_LastClickedID: 26114
+    m_ExpandedIDs: 00000000e26500000466000000ca9a3bffffff7f
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -400,10 +436,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000005067000052670000
 =======
     m_ExpandedIDs: 00000000e2650000
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    m_ExpandedIDs: 00000000e2650000
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -457,10 +497,14 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_GridSize: 96
 =======
     m_GridSize: 16
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    m_GridSize: 16
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &13
@@ -548,6 +592,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 50bdffff
       m_LastClickedID: -17072
       m_ExpandedIDs: f066ffff50bdffff36ceffffe2edffff36f4ffff70f4ffff98f4ffffe8f4ffff06f5ffff3ef9ffffe467000008680000
@@ -556,6 +601,11 @@ MonoBehaviour:
       m_LastClickedID: 40824
       m_ExpandedIDs: 3474ffff3076ffffcc80ffff0a83ffff1a86ffffce99ffff749cffff349effff2ca1ffff6ea2ffffe6a6ffffa4a7ffff2ea9ffffe8aaffff86aeffff6ccdffffdacfffffb4d2ffffaeddffff64f4ffff18fbffffca640000d67800001079000046790000047c0000487c0000809100009291000092920000
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+      m_SelectedIDs: 789f0000
+      m_LastClickedID: 40824
+      m_ExpandedIDs: 3474ffff3076ffffcc80ffff0a83ffff1a86ffffce99ffff749cffff349effff2ca1ffff6ea2ffffe6a6ffffa4a7ffff2ea9ffffe8aaffff86aeffff6ccdffffdacfffffb4d2ffffaeddffff64f4ffff18fbffffca640000d67800001079000046790000047c0000487c0000809100009291000092920000
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -938,6 +988,7 @@ MonoBehaviour:
       size: {x: 0, y: 0}
       sizeOverriden: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -953,6 +1004,8 @@ MonoBehaviour:
       sizeOverriden: 0
 =======
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
@@ -965,6 +1018,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 104.82482, y: 0.56086475, z: 0.8757423}
     speed: 2
     m_Value: {x: 104.82482, y: 0.56086475, z: 0.8757423}
@@ -973,6 +1027,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 102.69934, y: -49.30504, z: -0.41675976}
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    m_Target: {x: 104.41466, y: -48.81312, z: -0.4400139}
+    speed: 2
+    m_Value: {x: 102.69934, y: -49.30504, z: -0.41675976}
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1023,6 +1082,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 27.64603
     speed: 2
     m_Value: 27.64603
@@ -1031,6 +1091,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 51.675903
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    m_Target: 54.00132
+    speed: 2
+    m_Value: 51.675903
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1123,10 +1188,14 @@ MonoBehaviour:
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_EnableMouseInput: 1
 =======
     m_EnableMouseInput: 0
 >>>>>>> fbe69f4 (6.21 23:43 小地图、剧情系统暂存)
+=======
+    m_EnableMouseInput: 0
+>>>>>>> fbe69f42f3ace6501b2f5311e9f9c576c39c1709
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
