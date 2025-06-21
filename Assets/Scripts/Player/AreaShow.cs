@@ -6,13 +6,16 @@ using UnityEngine.Events;
 public class AreaShow : MonoBehaviour
 {
     public UnityEvent onAreaShow;
+    private InputActions inputActions;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            onAreaShow.Invoke();
-        }
+        inputActions = new InputActions();
+        inputActions.player.Enable();
+    }
+
+    public void OnAreaShow()
+    {
+        onAreaShow.Invoke();
     }
 }

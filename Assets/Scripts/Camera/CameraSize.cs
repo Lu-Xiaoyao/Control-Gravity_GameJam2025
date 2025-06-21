@@ -1,30 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AllControl;
 
 public class CameraSize : MonoBehaviour
 {
-    private Camera camera;
+    
     void Start()
     {
-        camera = GetComponent<Camera>();
+        GetComponent<Camera>().orthographicSize = GameManager.Instance.cameraSizeNormal;
     }
-    void Update()
+    public void CameraEnlarge()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            CameraEnlarge();
-        }
-        
-    }
-    void CameraEnlarge()
-    {
-        camera.orthographicSize = 25f;
+        GetComponent<Camera>().orthographicSize = GameManager.Instance.cameraSizeEnlarge;
         Invoke("CameraReset",5f);
         
     }
     void CameraReset()
     {
-        camera.orthographicSize = 10f;
+        GetComponent<Camera>().orthographicSize = GameManager.Instance.cameraSizeNormal;
     }
 }

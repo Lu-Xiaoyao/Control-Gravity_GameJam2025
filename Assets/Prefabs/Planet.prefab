@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 4489828245513538286}
   - component: {fileID: 6448922638089327894}
   - component: {fileID: 498721598869934103}
-  - component: {fileID: 1514693607528639218}
+  - component: {fileID: 2068247777834773875}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -253,7 +253,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -293,7 +293,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.21
+  m_Radius: 5
 --- !u!114 &6448922638089327894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 0
---- !u!114 &1514693607528639218
+--- !u!114 &2068247777834773875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7511982263304135963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df8ae9329fac83468a3b19b1569d587, type: 3}
+  m_Script: {fileID: 11500000, guid: d2ab6f12804082547bf802a4ae444d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   images:
@@ -339,7 +339,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c8c6868e6d074974fae1a18c699b8996, type: 3}
   - {fileID: 21300000, guid: 98b4ebf61c4423a409df491437f01fad, type: 3}
   spriteRenderer: {fileID: 6142401258471012647}
+  planetGravity: {fileID: 0}
   imageIndex: 0
+  planetSize: 1
+  gravityExtent: 1.5
+  gravitySize: 20
+  colliderSettings: []
+  planetCollider: {fileID: 4489828245513538286}
+  gravityCollider: {fileID: 5027448625259042986}
 --- !u!1 &7550345258661863869
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +377,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 23.269375, y: 23.269375, z: 23.269375}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4980291829564310093}

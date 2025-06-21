@@ -126,6 +126,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd07bced-a051-40a3-aa73-78517bb77a23"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -133,6 +142,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c9987732-bb1a-4723-a923-79c52cfe4aee"",
                     ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowArea"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8ec3cca-cef0-4997-b86b-b357168c2b9f"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowArea"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6cb07c21-fa03-4a53-ae28-8f18940651f0"",
+                    ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -153,8 +184,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ccd740da-5f6c-4cc8-9638-ae0b41fb8cf1"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7885c74e-f3e2-49ef-9643-cd033b294df6"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8158ccba-92a9-4ea5-a6fb-95b9e3dd0bf1"",
                     ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpeedUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1682262c-5f91-4d7f-846d-11a13812fbd1"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpeedUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""744314cc-74ea-4ccf-a2cb-b79e64b18b80"",
+                    ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -172,6 +247,39 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""CameraEnlarge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc9a2488-4533-4bb3-b93e-8d04c3560535"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraEnlarge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""755525f8-533a-4463-b9d3-cb86012a23fc"",
+                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraEnlarge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad92c866-899f-4089-9433-19aaa724a54c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,6 +292,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_player_ResetPosition = m_player.FindAction("ResetPosition", throwIfNotFound: true);
         m_player_SpeedUp = m_player.FindAction("SpeedUp", throwIfNotFound: true);
         m_player_CameraEnlarge = m_player.FindAction("CameraEnlarge", throwIfNotFound: true);
+        m_player_Newaction = m_player.FindAction("New action", throwIfNotFound: true);
     }
 
     ~@InputActions()
@@ -268,6 +377,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_player_ResetPosition;
     private readonly InputAction m_player_SpeedUp;
     private readonly InputAction m_player_CameraEnlarge;
+    private readonly InputAction m_player_Newaction;
     /// <summary>
     /// Provides access to input actions defined in input action map "player".
     /// </summary>
@@ -295,6 +405,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "player/CameraEnlarge".
         /// </summary>
         public InputAction @CameraEnlarge => m_Wrapper.m_player_CameraEnlarge;
+        /// <summary>
+        /// Provides access to the underlying input action "player/Newaction".
+        /// </summary>
+        public InputAction @Newaction => m_Wrapper.m_player_Newaction;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -333,6 +447,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @CameraEnlarge.started += instance.OnCameraEnlarge;
             @CameraEnlarge.performed += instance.OnCameraEnlarge;
             @CameraEnlarge.canceled += instance.OnCameraEnlarge;
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
         }
 
         /// <summary>
@@ -356,6 +473,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @CameraEnlarge.started -= instance.OnCameraEnlarge;
             @CameraEnlarge.performed -= instance.OnCameraEnlarge;
             @CameraEnlarge.canceled -= instance.OnCameraEnlarge;
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
         }
 
         /// <summary>
@@ -424,5 +544,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCameraEnlarge(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }

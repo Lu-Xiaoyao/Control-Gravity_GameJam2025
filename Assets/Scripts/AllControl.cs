@@ -16,13 +16,15 @@ public class AllControl : MonoBehaviour
                 return _instance;
             }
         }
-        public float moveSpeed = 40f;
+        public float moveSpeed = 10f;
         public float spinSpeed = 25f;        
         public float cameraSpeed = 10f;
         public int deathCount = 0;
-        public float gravityExtentMax = 0.5f;
-        public float gravityExtentMin = 0.05f;
+        public float gravityExtentMax = 0.1f;
+        public float gravityExtentMin = 0.01f;
         public float gravityAreaShowTime = 3f;
+        public float cameraSizeNormal = 10f;
+        public float cameraSizeEnlarge = 25f;
     }
 
 }
