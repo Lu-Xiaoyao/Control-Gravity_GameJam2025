@@ -9,14 +9,16 @@ public class PlayerDeath : MonoBehaviour
     private PlayerMove playerMove;
     private Transform minPoint;
     private Transform maxPoint;
+    private Animator animator;
 
     void Start()
     {
-        spawnPoint = GameObject.Find("LocatePoints").transform.Find("PlayerSpawn");
+        spawnPoint = GameObject.Find("PlayerSpawn").transform;
         playerMove = GetComponent<PlayerMove>();
-        minPoint = GameObject.Find("LocatePoints").transform.Find("PlayerMin");
-        maxPoint = GameObject.Find("LocatePoints").transform.Find("PlayerMax");
+        minPoint = GameObject.Find("PlayerMin").transform;
+        maxPoint = GameObject.Find("PlayerMax").transform;
         transform.position = spawnPoint.position;
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -24,10 +26,17 @@ public class PlayerDeath : MonoBehaviour
         if(transform.position.x < minPoint.position.x || transform.position.x > maxPoint.position.x
         || transform.position.y < minPoint.position.y || transform.position.y > maxPoint.position.y)
         {
-            Die();
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            playerMove.ResetSpeed();
+            AllControl.GameManager.Instance.deathCount++;
         }
     }
     public void Die()
+    {
+        animator.SetTrigger("Death");
+        Invoke("ResetPlayer", 1f);
+    }
+    public void ResetPlayer()
     {
         transform.position = spawnPoint.position;
         transform.rotation = Quaternion.Euler(0, 0, 0);

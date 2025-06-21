@@ -12,12 +12,21 @@ public class PlanetPreviewEditor : Editor
     private SerializedProperty gravitySizeProp;
     private SerializedProperty gravityExtentProp;
     private SerializedProperty colliderSettingsProp;
+    private SerializedProperty touchEffectTypeProp;
+    private SerializedProperty isControllableProp;
     
     // 碰撞器半径调整
     private float planetColliderRadius = 4.21f;
     private float gravityColliderRadius = 0.5f;
     private Vector2 planetColliderOffset = Vector2.zero;
     private Vector2 gravityColliderOffset = Vector2.zero;
+    
+    // 碰撞效果设置
+    private TouchEffectType touchEffectType = TouchEffectType.None;
+    private GameObject controlledObject;
+    
+    // 控制性设置
+    private bool isControllable = true;
     
     void OnEnable()
     {
@@ -28,6 +37,8 @@ public class PlanetPreviewEditor : Editor
         gravitySizeProp = serializedObject.FindProperty("gravitySize");
         gravityExtentProp = serializedObject.FindProperty("gravityExtent");
         colliderSettingsProp = serializedObject.FindProperty("colliderSettings");
+        touchEffectTypeProp = serializedObject.FindProperty("touchEffectType");
+        isControllableProp = serializedObject.FindProperty("isControllable");
         
         // 加载当前碰撞器设置
         LoadCurrentColliderSettings();
@@ -43,6 +54,8 @@ public class PlanetPreviewEditor : Editor
         EditorGUILayout.PropertyField(planetSizeProp);
         EditorGUILayout.PropertyField(gravitySizeProp);
         EditorGUILayout.PropertyField(gravityExtentProp);
+        EditorGUILayout.PropertyField(touchEffectTypeProp);
+        EditorGUILayout.PropertyField(isControllableProp);
         
         // 添加预览控制
         EditorGUILayout.Space();
@@ -195,6 +208,60 @@ public class PlanetPreviewEditor : Editor
             ApplyColliderRadius();
         }
         
+        // 添加碰撞效果调整区域
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("碰撞效果调整", EditorStyles.boldLabel);
+        
+        // 碰撞效果类型选择
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("碰撞效果类型:", EditorStyles.boldLabel);
+        TouchEffectType newTouchEffectType = (TouchEffectType)EditorGUILayout.EnumPopup("效果类型", touchEffectType);
+        if (newTouchEffectType != touchEffectType)
+        {
+            touchEffectType = newTouchEffectType;
+            ApplyTouchEffectSettings();
+        }
+        
+        // 受控制对象选择（仅当效果类型为Show或Hide时显示）
+        if (touchEffectType == TouchEffectType.Show || touchEffectType == TouchEffectType.Hide)
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("受控制对象:", EditorStyles.boldLabel);
+            GameObject newControlledObject = (GameObject)EditorGUILayout.ObjectField("控制对象", controlledObject, typeof(GameObject), true);
+            if (newControlledObject != controlledObject)
+            {
+                controlledObject = newControlledObject;
+                ApplyTouchEffectSettings();
+            }
+            
+            if (controlledObject == null)
+            {
+                EditorGUILayout.HelpBox("⚠️ 请选择要控制的对象", MessageType.Warning);
+            }
+        }
+        
+        // 显示碰撞效果说明
+        EditorGUILayout.Space();
+        ShowTouchEffectInfo();
+        
+        // 添加控制性调整区域
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("控制性调整", EditorStyles.boldLabel);
+        
+        // 控制性开关
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("玩家控制:", EditorStyles.boldLabel);
+        bool newIsControllable = EditorGUILayout.Toggle("能否被玩家控制", isControllable);
+        if (newIsControllable != isControllable)
+        {
+            isControllable = newIsControllable;
+            ApplyControllableSettings();
+        }
+        
+        // 显示控制性说明
+        EditorGUILayout.Space();
+        ShowControllableInfo();
+        
         // 显示同步信息
         EditorGUILayout.Space();
         ShowSyncInfo();
@@ -225,6 +292,7 @@ public class PlanetPreviewEditor : Editor
                 gravityColliderRadius = settings.gravityColliderRadius;
                 planetColliderOffset = settings.planetColliderOffset;
                 gravityColliderOffset = settings.gravityColliderOffset;
+                // 碰撞效果和控制性设置不从全局设置加载，保持当前值
             }
             else
             {
@@ -233,6 +301,7 @@ public class PlanetPreviewEditor : Editor
                 gravityColliderRadius = 0.5f;
                 planetColliderOffset = Vector2.zero;
                 gravityColliderOffset = Vector2.zero;
+                // 碰撞效果和控制性设置保持当前值，不重置
             }
         }
     }
@@ -269,9 +338,11 @@ public class PlanetPreviewEditor : Editor
     {
         if (planetCustom != null)
         {
-            planetCustom.SaveColliderSettings(planetColliderRadius, gravityColliderRadius, planetColliderOffset, gravityColliderOffset);
+            planetCustom.SaveColliderSettings(planetColliderRadius, gravityColliderRadius, planetColliderOffset, gravityColliderOffset, touchEffectType, controlledObject, isControllable);
             EditorUtility.SetDirty(planetCustom);
-            Debug.Log($"已保存图片 {imageIndexProp.intValue + 1} 的碰撞器设置: 星球半径={planetColliderRadius:F2}, 引力半径={gravityColliderRadius:F2}, 星球偏移={planetColliderOffset}, 引力偏移={gravityColliderOffset}");
+            Debug.Log($"已保存图片 {imageIndexProp.intValue + 1} 的设置:\n" +
+                     $"碰撞器设置(同步): 星球半径={planetColliderRadius:F2}, 引力半径={gravityColliderRadius:F2}, 星球偏移={planetColliderOffset}, 引力偏移={gravityColliderOffset}\n" +
+                     $"碰撞效果设置(仅当前): {touchEffectType}, 控制性设置(仅当前): {isControllable}");
         }
     }
     
@@ -286,6 +357,7 @@ public class PlanetPreviewEditor : Editor
                 {
                     EditorGUILayout.LabelField($"图片 {i + 1}: 星球半径={settings.planetColliderRadius:F2}, 引力半径={settings.gravityColliderRadius:F2}");
                     EditorGUILayout.LabelField($"  星球偏移={settings.planetColliderOffset}, 引力偏移={settings.gravityColliderOffset}");
+                    EditorGUILayout.HelpBox("碰撞效果和控制性设置仅对当前星球生效，不在此处显示", MessageType.Info);
                 }
             }
         }
@@ -329,11 +401,11 @@ public class PlanetPreviewEditor : Editor
             
             if (sameAppearanceCount > 0)
             {
-                EditorGUILayout.HelpBox($"⚠️ 调整将同步到 {sameAppearanceCount} 个使用相同外观的星球", MessageType.Info);
+                EditorGUILayout.HelpBox($"⚠️ 碰撞器设置将同步到 {sameAppearanceCount} 个使用相同外观的星球\n💡 碰撞效果和控制性设置仅对当前星球生效", MessageType.Info);
             }
             else
             {
-                EditorGUILayout.HelpBox("✅ 当前场景中没有其他星球使用相同外观", MessageType.Info);
+                EditorGUILayout.HelpBox("✅ 当前场景中没有其他星球使用相同外观\n💡 碰撞效果和控制性设置仅对当前星球生效", MessageType.Info);
             }
         }
     }
@@ -368,6 +440,12 @@ public class PlanetPreviewEditor : Editor
             // 应用碰撞器设置
             ApplyColliderRadius();
             
+            // 应用碰撞效果设置
+            ApplyTouchEffectSettings();
+            
+            // 应用控制性设置
+            ApplyControllableSettings();
+            
             // 标记为已修改，确保场景保存时包含这些更改
             EditorUtility.SetDirty(planetCustom);
             EditorUtility.SetDirty(planetCustom.transform);
@@ -376,6 +454,105 @@ public class PlanetPreviewEditor : Editor
                 EditorUtility.SetDirty(gravityArea);
             }
         }
+    }
+    
+    private void ApplyTouchEffectSettings()
+    {
+        if (planetCustom != null)
+        {
+            // 直接更新当前星球的碰撞效果设置
+            var touchEffectTypeField = typeof(PlanetCustom).GetField("touchEffectType", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (touchEffectTypeField != null)
+            {
+                touchEffectTypeField.SetValue(planetCustom, touchEffectType);
+            }
+            
+            // 更新TouchEffect组件
+            TouchEffect touchEffect = planetCustom.GetComponent<TouchEffect>();
+            if (touchEffect != null)
+            {
+                // 使用反射更新TouchEffect组件的设置
+                var touchEffectTypeField2 = typeof(TouchEffect).GetField("touchEffectType", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                var controlledObjectField = typeof(TouchEffect).GetField("controlledObject", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                
+                if (touchEffectTypeField2 != null)
+                {
+                    touchEffectTypeField2.SetValue(touchEffect, touchEffectType);
+                }
+                if (controlledObjectField != null)
+                {
+                    controlledObjectField.SetValue(touchEffect, controlledObject);
+                }
+                
+                EditorUtility.SetDirty(touchEffect);
+            }
+            
+            // 标记为已修改
+            EditorUtility.SetDirty(planetCustom);
+        }
+    }
+    
+    private void ShowTouchEffectInfo()
+    {
+        string info = "";
+        switch (touchEffectType)
+        {
+            case TouchEffectType.None:
+                info = "无特殊效果";
+                break;
+            case TouchEffectType.Death:
+                info = "玩家触碰时死亡";
+                break;
+            case TouchEffectType.Show:
+                info = "玩家触碰时显示控制对象";
+                break;
+            case TouchEffectType.Hide:
+                info = "玩家触碰时隐藏控制对象";
+                break;
+        }
+        
+        EditorGUILayout.HelpBox($"当前效果: {info}\n💡 此设置仅对当前星球生效", MessageType.Info);
+        
+        if (touchEffectType == TouchEffectType.Show || touchEffectType == TouchEffectType.Hide)
+        {
+            if (controlledObject != null)
+            {
+                EditorGUILayout.HelpBox($"将控制对象: {controlledObject.name}", MessageType.Info);
+            }
+            else
+            {
+                EditorGUILayout.HelpBox("⚠️ 未设置控制对象，效果将不会生效", MessageType.Warning);
+            }
+        }
+    }
+    
+    private void ApplyControllableSettings()
+    {
+        if (planetCustom != null)
+        {
+            // 直接更新当前星球的控制性设置
+            var isControllableField = typeof(PlanetCustom).GetField("isControllable", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (isControllableField != null)
+            {
+                isControllableField.SetValue(planetCustom, isControllable);
+            }
+            
+            EditorUtility.SetDirty(planetCustom);
+        }
+    }
+    
+    private void ShowControllableInfo()
+    {
+        string info = isControllable ? "✅ 可以被玩家控制" : "❌ 不能被玩家控制";
+        string description = isControllable ? 
+            "玩家可以控制这个星球的引力和移动" : 
+            "玩家无法控制这个星球，它将保持静态或按预设行为运行";
+        
+        EditorGUILayout.HelpBox($"{info}\n{description}\n💡 此设置仅对当前星球生效", MessageType.Info);
     }
 }
 #endif 

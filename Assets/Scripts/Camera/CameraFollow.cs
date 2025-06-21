@@ -18,8 +18,8 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        minPoint = GameObject.Find("LocatePoints").transform.Find("CameraMin");
-        maxPoint = GameObject.Find("LocatePoints").transform.Find("CameraMax");
+        minPoint = GameObject.Find("CameraMin").transform;
+        maxPoint = GameObject.Find("CameraMax").transform;
         targetPoint = GameObject.Find("Player").transform;
         cameraSpeed = GameManager.Instance.cameraSpeed;
         if(minPoint != null)
