@@ -11,6 +11,9 @@ public class ColliderSettings
     public float gravityColliderRadius = 0.5f;
     public Vector2 planetColliderOffset = Vector2.zero;
     public Vector2 gravityColliderOffset = Vector2.zero;
+    public TouchEffectType touchEffectType = TouchEffectType.None;
+    public GameObject controlledObject;
+    public bool isControllable = true;
 }
 
 public class PlanetCustom : MonoBehaviour
@@ -21,10 +24,16 @@ public class PlanetCustom : MonoBehaviour
     [SerializeField] private List<Sprite> images = new List<Sprite>();
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private PlanetGravity planetGravity;
+
+    //外观设置
     [SerializeField] protected internal int imageIndex = 0;
     [SerializeField] protected internal float planetSize = 1f;
     [SerializeField] protected internal float gravityExtent = 1.5f;
     [SerializeField] protected internal float gravitySize = 20f;
+    
+    //触碰效果和无法控制效果设置
+    [SerializeField] protected internal TouchEffectType touchEffectType = TouchEffectType.None;
+    [SerializeField] protected internal bool isControllable = true;
     
     // 碰撞器设置
     [SerializeField] private List<ColliderSettings> colliderSettings = new List<ColliderSettings>();
@@ -70,7 +79,7 @@ public class PlanetCustom : MonoBehaviour
         transform.Find("GravityArea").localScale = new Vector3(gravitySize, gravitySize, 1);
         gravityExtent = Random.Range(GameManager.Instance.gravityExtentMin, GameManager.Instance.gravityExtentMax);
         //planetGravity.gravityExtent = gravityExtent;
-        
+
         // 应用碰撞器设置
         ApplyColliderSettings();
     }
@@ -94,6 +103,24 @@ public class PlanetCustom : MonoBehaviour
                 gravityCollider.offset = settings.gravityColliderOffset;
             }
         }
+    }
+    
+    /// <summary>
+    /// 应用当前外观的碰撞效果设置
+    /// </summary>
+    private void ApplyTouchEffectSettings()
+    {
+        // 碰撞效果设置只对当前星球生效，不从全局设置读取
+        // 直接使用当前星球的设置
+    }
+    
+    /// <summary>
+    /// 应用当前外观的控制性设置
+    /// </summary>
+    private void ApplyControllableSettings()
+    {
+        // 控制性设置只对当前星球生效，不从全局设置读取
+        // 直接使用当前星球的设置
     }
     
     /// <summary>
@@ -129,8 +156,12 @@ public class PlanetCustom : MonoBehaviour
     /// <param name="gravityRadius">引力碰撞器半径</param>
     /// <param name="planetOffset">星球碰撞器偏移</param>
     /// <param name="gravityOffset">引力碰撞器偏移</param>
-    public void SaveColliderSettings(float planetRadius, float gravityRadius, Vector2 planetOffset, Vector2 gravityOffset)
+    /// <param name="effectType">碰撞效果类型</param>
+    /// <param name="controlledObj">受控制的对象</param>
+    /// <param name="controllable">能否被玩家控制</param>
+    public void SaveColliderSettings(float planetRadius, float gravityRadius, Vector2 planetOffset, Vector2 gravityOffset, TouchEffectType effectType, GameObject controlledObj, bool controllable)
     {
+        // 保存碰撞器设置到全局字典（用于同外观星球同步）
         ColliderSettings settings = GetColliderSettings(imageIndex);
         if (settings == null)
         {
@@ -142,6 +173,7 @@ public class PlanetCustom : MonoBehaviour
         settings.gravityColliderRadius = gravityRadius;
         settings.planetColliderOffset = planetOffset;
         settings.gravityColliderOffset = gravityOffset;
+        // 注意：碰撞效果和控制性设置不保存到全局字典，只对当前星球生效
         
         // 保存到全局字典
         globalColliderSettings[imageIndex] = settings;
@@ -162,7 +194,7 @@ public class PlanetCustom : MonoBehaviour
             colliderSettings.Add(settings);
         }
         
-        // 立即应用设置
+        // 立即应用碰撞器设置
         if (planetCollider != null)
         {
             planetCollider.radius = planetRadius;
@@ -174,12 +206,18 @@ public class PlanetCustom : MonoBehaviour
             gravityCollider.offset = gravityOffset;
         }
         
-        // 通知所有相同外观的星球更新设置
+        // 应用碰撞效果设置（仅对当前星球）
+        ApplyTouchEffectSettings();
+        
+        // 应用控制性设置（仅对当前星球）
+        ApplyControllableSettings();
+        
+        // 通知所有相同外观的星球更新碰撞器设置（不包括碰撞效果和控制性）
         NotifyAllPlanetsWithSameAppearance();
     }
     
     /// <summary>
-    /// 通知所有相同外观的星球更新设置
+    /// 通知所有相同外观的星球更新碰撞器设置（不包括碰撞效果和控制性）
     /// </summary>
     private void NotifyAllPlanetsWithSameAppearance()
     {
@@ -200,6 +238,7 @@ public class PlanetCustom : MonoBehaviour
                 
                 if (planetImageIndex == this.imageIndex)
                 {
+                    // 只同步碰撞器设置，不同步碰撞效果和控制性设置
                     planet.ApplyColliderSettings();
                 }
             }
@@ -301,6 +340,8 @@ public class PlanetCustom : MonoBehaviour
             
             // 应用已保存的碰撞器设置
             ApplyColliderSettings();
+            
+            // 注意：碰撞效果和控制性设置只对当前星球生效，不从全局设置读取
         }
     }
     #endif
