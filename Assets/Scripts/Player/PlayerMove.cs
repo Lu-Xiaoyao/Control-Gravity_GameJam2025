@@ -6,6 +6,8 @@ using static AllControl;
 public class PlayerMove : MonoBehaviour
 {
     protected Rigidbody2D rb;
+    private Animator animator;
+    private int finalState = 0;
     [SerializeField] protected internal List<PlanetGravity> directions = new List<PlanetGravity>();
     [SerializeField] protected internal Vector2 finalDirectDirection;
     //[SerializeField] protected internal Vector2 finalAngleDirection;
@@ -16,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         moveSpeed = GameManager.Instance.moveSpeed;
         ResetSpeed();
     }
@@ -31,18 +34,26 @@ public class PlayerMove : MonoBehaviour
         if(directions.Count > 0)
         {
             finalDirectDirection = Vector2.zero;
+            finalState = 0;
             foreach(PlanetGravity planet in directions)
             {
                 finalDirectDirection += planet.direction;
+                finalState += planet.gravityStateDict[planet.gravityState];
                 //finalAngleDirection += planet.angleDirection;
             }
             //finalDirection = finalDirectDirection + finalAngleDirection;
         }
         else
         {
+            finalState = 0;
             //finalDirection = finalDirectDirection;
         }
         rb.velocity = finalDirectDirection * moveSpeed;
+        if(animator != null)
+        {
+            animator.SetInteger("State", finalState);
+            Debug.Log(finalState);
+        }
     }
 
     public void AddDirection(PlanetGravity planet)

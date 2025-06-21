@@ -13,7 +13,9 @@ public class StarFit : MonoBehaviour
     {
         if(other.gameObject.transform.parent == transform.parent)
         {
+            GetComponent<PlayerMove>().enabled = false;
             rb.velocity = Vector2.zero;
+            transform.position = other.transform.position;
         }
     }
 }

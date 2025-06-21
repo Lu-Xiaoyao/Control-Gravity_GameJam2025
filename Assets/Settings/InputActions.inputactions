@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "New action",
+                    "name": "ResetStars",
                     "type": "Button",
                     "id": "cd07bced-a051-40a3-aa73-78517bb77a23",
                     "expectedControlType": "",
@@ -187,11 +187,39 @@
                 {
                     "name": "",
                     "id": "ad92c866-899f-4089-9433-19aaa724a54c",
-                    "path": "",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ResetStars",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "91022dbe-9c0d-48d3-9090-575666df3870",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "5fcbb1fc-31bc-4543-85e3-e95c3b49d7be",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4f2a15be-3131-43ee-895a-81ed6c2196b2",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

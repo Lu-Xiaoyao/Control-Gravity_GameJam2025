@@ -30,6 +30,7 @@ public class PlayerDeath : MonoBehaviour
     public void Die()
     {
         transform.position = spawnPoint.position;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         playerMove.ResetSpeed();
         AllControl.GameManager.Instance.deathCount++;
     }

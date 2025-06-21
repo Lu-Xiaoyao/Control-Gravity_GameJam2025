@@ -14,6 +14,7 @@ public class StarReset : MonoBehaviour, IPointerDownHandler
     void Start()
     {
         transform.position = startPoint.position;
+        ResetStars.instance.onResetStars.AddListener(ResetStar);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -24,5 +25,6 @@ public class StarReset : MonoBehaviour, IPointerDownHandler
     public void ResetStar()
     {
         transform.position = startPoint.position;
+        GetComponent<PlayerMove>().ResetSpeed();
     }
 }

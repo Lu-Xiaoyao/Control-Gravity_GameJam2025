@@ -146,10 +146,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04081011, y: -0.0030747652}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -160,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 4.03986, y: 4.8914833}
   m_EdgeRadius: 0
 --- !u!114 &1594010378781629806
 MonoBehaviour:
@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 6203275561742778112}
   - component: {fileID: 169847005198893808}
   - component: {fileID: 7947315876936862040}
+  - component: {fileID: 3900283078795580452}
   m_Layer: 0
   m_Name: Star
   m_TagString: Star
@@ -298,7 +299,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0.06086731, y: -0.23646641}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -309,7 +310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.5477295, y: 3.3042088}
   m_EdgeRadius: 0
 --- !u!50 &6203275561742778112
 Rigidbody2D:
@@ -363,6 +364,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80867e35b592211498387249c889eef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3900283078795580452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891655801086339114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd7cbd9bdf58ed4ab9688b9b91ef292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6726403636881901675

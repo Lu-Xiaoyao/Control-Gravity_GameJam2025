@@ -18,7 +18,8 @@ public class PlanetGravity : MonoBehaviour
     [SerializeField] protected internal GravityState startGravityState;
     [SerializeField] protected internal Vector2 direction = Vector2.zero;
     [SerializeField] protected internal Vector2 angleDirection = Vector2.zero;
-    Dictionary<GravityState, int> gravityStateDict = new Dictionary<GravityState, int>();
+    private Dictionary<GameObject, Transform> starPuzzle = new Dictionary<GameObject, Transform>();
+    public Dictionary<GravityState, int> gravityStateDict = new Dictionary<GravityState, int>();
     void Start()
     {
             moveSpeed = GameManager.Instance.moveSpeed;
@@ -31,12 +32,21 @@ public class PlanetGravity : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D target)
     {
-        if(target.gameObject.CompareTag("Player") || target.gameObject.CompareTag("Star"))
+        if (target.gameObject.CompareTag("Player"))
         {
             if(target.transform.parent == null)
             {
                 target.transform.SetParent(transform);
             }
+            target.GetComponent<PlayerMove>().AddDirection(this);
+        }
+        else if (target.gameObject.CompareTag("Star"))
+        {
+            if (!starPuzzle.ContainsKey(target.gameObject))
+            {
+                starPuzzle.Add(target.gameObject, target.transform.parent);
+            }
+            target.transform.SetParent(transform);
             target.GetComponent<PlayerMove>().AddDirection(this);
         }
     }
@@ -45,16 +55,37 @@ public class PlanetGravity : MonoBehaviour
     {
         if(target.gameObject.CompareTag("Player") || target.gameObject.CompareTag("Star"))
         {
-            direction = (transform.position - target.transform.position).normalized * gravityStateDict[gravityState] * gravityExtent;
-            angleDirection = Vector2.Perpendicular((transform.position - target.transform.position).normalized) * gravityExtent;
+            if (gravityStateDict.ContainsKey(gravityState))
+            {
+                direction = (transform.position - target.transform.position).normalized * gravityStateDict[gravityState] * gravityExtent;
+                angleDirection = Vector2.Perpendicular((transform.position - target.transform.position).normalized) * gravityExtent;
+                
+                Debug.Log($"星球 {gameObject.name} 重力状态: {gravityState}, 方向: {direction}, 重力系数: {gravityStateDict[gravityState]}");
+            }
+            else
+            {
+                Debug.LogError($"重力状态 {gravityState} 在字典中不存在！");
+                direction = Vector2.zero;
+                angleDirection = Vector2.zero;
+            }
         }
     }
     
     void OnTriggerExit2D(Collider2D target)
     {
-        if(target.gameObject.CompareTag("Player") || target.gameObject.CompareTag("Star"))
+        if(target.gameObject.CompareTag("Player"))
         {
             target.transform.SetParent(null);
+            target.GetComponent<PlayerMove>().RemoveDirection(this);
+        }
+        else if(target.gameObject.CompareTag("Star"))
+        {
+            if (starPuzzle.ContainsKey(target.gameObject))
+            {
+                target.transform.rotation = Quaternion.Euler(0, 0, 0);
+                target.transform.SetParent(starPuzzle[target.gameObject]);
+                starPuzzle.Remove(target.gameObject);
+            }
             target.GetComponent<PlayerMove>().RemoveDirection(this);
         }
    }

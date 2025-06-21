@@ -18,6 +18,10 @@ public class PlanetGravityShift : MonoBehaviour, IPointerDownHandler
    public void OnPointerDown(PointerEventData eventData)
    {
         planetGravity.gravityState = (GravityState)(((int)planetGravity.gravityState + 1) % 3);
+        // 重置重力方向，确保状态切换时方向被正确更新
+        planetGravity.direction = Vector2.zero;
+        planetGravity.angleDirection = Vector2.zero;
+        
         Debug.Log("重力模式切换为" + planetGravity.gravityState);
         if(planetGravity.gravityState == GravityState.Balanced)
         {
