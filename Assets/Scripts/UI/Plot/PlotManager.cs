@@ -46,6 +46,7 @@ public class PlotManager : MonoBehaviour, InputActions.IUIActions
     
     // 当前场景索引
     private int currentSceneIndex = 1; // 默认从第1关开始
+    private string currentSceneName = "";
     
     private void Awake()
     {
@@ -61,7 +62,20 @@ public class PlotManager : MonoBehaviour, InputActions.IUIActions
     private void Start()
     {
         LoadDialogueData();
+        UpdateCurrentSceneIndex();
         PlaySceneStartDialogue();
+    }
+    
+    private void Update()
+    {
+        // 检测场景是否发生变化
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        if (currentScene != currentSceneName)
+        {
+            currentSceneName = currentScene;
+            UpdateCurrentSceneIndex();
+            PlaySceneStartDialogue();
+        }
     }
     
     private void OnEnable()
@@ -317,5 +331,46 @@ public class PlotManager : MonoBehaviour, InputActions.IUIActions
     public void TestDialogue()
     {
         PlayDialogueSegment(currentSceneIndex, 1);
+    }
+    
+    /// <summary>
+    /// 根据当前场景名称更新场景索引
+    /// </summary>
+    private void UpdateCurrentSceneIndex()
+    {
+        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        
+        // 根据场景名称设置场景索引
+        if (sceneName.Contains("Level1"))
+        {
+            currentSceneIndex = 1;
+        }
+        else if (sceneName.Contains("Level2"))
+        {
+            currentSceneIndex = 2;
+        }
+        else if (sceneName.Contains("Level3"))
+        {
+            currentSceneIndex = 3;
+        }
+        else if (sceneName.Contains("Level4"))
+        {
+            currentSceneIndex = 4;
+        }
+        else if (sceneName.Contains("End"))
+        {
+            currentSceneIndex = 5; // 假设End场景对应场景5
+        }
+        else
+        {
+            // 尝试从场景名称中提取数字
+            string number = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+").Value;
+            if (!string.IsNullOrEmpty(number) && int.TryParse(number, out int sceneNum))
+            {
+                currentSceneIndex = sceneNum;
+            }
+        }
+        
+        Debug.Log($"场景切换检测: {sceneName} -> 场景索引 {currentSceneIndex}");
     }
 } 
