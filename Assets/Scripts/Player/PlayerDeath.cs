@@ -31,10 +31,17 @@ public class PlayerDeath : MonoBehaviour
             AllControl.GameManager.Instance.deathCount++;
         }
     }
+
     public void Die()
     {
+        ResetPlayer();
+    }
+
+    public void Die(float delay )
+    {
         animator.SetTrigger("Death");
-        Invoke("ResetPlayer", 1f);
+        Invoke("ResetPlayer", delay);
+        animator.SetTrigger("Respawn");
     }
     public void ResetPlayer()
     {
