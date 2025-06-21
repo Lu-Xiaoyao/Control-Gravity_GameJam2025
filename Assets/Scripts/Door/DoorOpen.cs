@@ -17,6 +17,11 @@ public class DoorOpen : MonoBehaviour
         {
             star.onPuzzleSolved.AddListener(AddPuzzleSolved);
         }
+        if(requiredStars.Count == 0)
+        {
+            doorOpen = true;
+            GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1f);
+        }
     }
 
     void AddPuzzleSolved()
@@ -25,10 +30,11 @@ public class DoorOpen : MonoBehaviour
         if(puzzleSolvedCount >= puzzleSolvedRequired)
         {
             doorOpen = true;
+            GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1f);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Player") && doorOpen)
         {

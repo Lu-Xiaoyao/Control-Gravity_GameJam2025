@@ -48,10 +48,10 @@ public class InputHandle : MonoBehaviour
         {
             resetPlayer.ResetPosition();
         }
-        if(inputActions.player.CameraEnlarge.triggered)
-        {
-            cameraSize.CameraEnlarge();
-        }
+        //if(inputActions.player.CameraEnlarge.triggered)
+        //{
+        //    cameraSize.CameraEnlarge();
+        //}
         if(inputActions.player.ResetStars.triggered)
         {
             resetStars.ResetAllStars();
