@@ -25,6 +25,7 @@ public class AllControl : MonoBehaviour
         public float gravityAreaShowTime = 3f;
         //public float cameraSizeNormal = 10f;
         //public float cameraSizeEnlarge = 25f;
+        public int levelComplete = 0;
     }
 
 }

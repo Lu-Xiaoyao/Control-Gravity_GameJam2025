@@ -26,15 +26,20 @@ public class PlayerDeath : MonoBehaviour
         if(transform.position.x < minPoint.position.x || transform.position.x > maxPoint.position.x
         || transform.position.y < minPoint.position.y || transform.position.y > maxPoint.position.y)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            playerMove.ResetSpeed();
-            AllControl.GameManager.Instance.deathCount++;
+            Die();
         }
     }
+
     public void Die()
     {
+        ResetPlayer();
+    }
+
+    public void Die(float delay )
+    {
         animator.SetTrigger("Death");
-        Invoke("ResetPlayer", 1f);
+        Invoke("ResetPlayer", delay);
+        animator.SetTrigger("Respawn");
     }
     public void ResetPlayer()
     {
