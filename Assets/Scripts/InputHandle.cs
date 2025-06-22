@@ -73,4 +73,19 @@ public class InputHandle : MonoBehaviour
     //{
     //    inputActions.player.Disable();
     //}
+
+    //private void OnEnable()
+    //{
+    //    inputActions.player.Enable();
+    //}
+    
+    private void OnDisable()
+    {
+        inputActions.player.Disable();
+    }
+    
+    private void OnDestroy()
+    {
+        inputActions?.Dispose();
+    }
 }

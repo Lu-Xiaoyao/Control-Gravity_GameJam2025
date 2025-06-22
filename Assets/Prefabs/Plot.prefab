@@ -213,8 +213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
-  m_sharedMaterial: {fileID: 2615456816198246305, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
+  m_sharedMaterial: {fileID: -1805827053847505602, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -387,8 +387,8 @@ MonoBehaviour:
     is always the first step towards change.,\r\n#,4,3\r\nSu Yunheng, That's right,
     gravity is my domain, I was born for a grand adventure, for this vast space!,\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
-  m_sharedMaterial: {fileID: 2615456816198246305, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
+  m_sharedMaterial: {fileID: -1805827053847505602, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

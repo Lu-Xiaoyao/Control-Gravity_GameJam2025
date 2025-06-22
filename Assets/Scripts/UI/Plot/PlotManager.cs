@@ -33,7 +33,6 @@ public class PlotManager : MonoBehaviour, InputActions.IUIActions
     [SerializeField] private GameObject[] dialogueTriggers; // 场景中的对话触发点
     
     [Header("设置")]
-    [SerializeField] private string csvFilePath = "Data/Plot.csv";
     [SerializeField] private float typingSpeed = 0.05f; // 打字机效果速度
     
     private InputActions inputActions;
@@ -100,18 +99,18 @@ public class PlotManager : MonoBehaviour, InputActions.IUIActions
     {
         allDialogues.Clear();
         
-        // 构建完整的文件路径
-        string fullPath = Path.Combine(Application.dataPath, csvFilePath);
+        // 使用Resources.Load加载CSV文件
+        TextAsset csvFile = Resources.Load<TextAsset>("Plot");
         
-        if (!File.Exists(fullPath))
+        if (csvFile == null)
         {
-            Debug.LogError($"对话文件不存在: {fullPath}");
+            Debug.LogError("无法加载对话文件 Plot.csv，请确保文件位于 Assets/Resources 文件夹中");
             return;
         }
         
         try
         {
-            string[] lines = File.ReadAllLines(fullPath);
+            string[] lines = csvFile.text.Split('\n');
             DialogueSegment currentSegment = null;
             
             foreach (string line in lines)

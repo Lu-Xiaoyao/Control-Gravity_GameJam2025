@@ -11,27 +11,29 @@ public class DialogueTest : MonoBehaviour
     [SerializeField] private int testSceneIndex = 1;
     [SerializeField] private int testSegmentIndex = 1;
     
-    private void Start()
+    [ContextMenu("测试对话加载")]
+    public void TestDialogueLoading()
     {
-        // 自动获取PlotManager引用
         if (plotManager == null)
         {
             plotManager = FindObjectOfType<PlotManager>();
         }
         
-        if (plotManager == null)
+        if (plotManager != null)
         {
-            Debug.LogError("未找到PlotManager，无法进行测试");
-            return;
+            Debug.Log("开始测试对话系统...");
+            plotManager.TestDialogue();
         }
-        
-        Debug.Log("对话系统测试脚本已启动");
-        Debug.Log("按以下按键进行测试：");
-        Debug.Log("1 - 测试对话段落1");
-        Debug.Log("2 - 测试对话段落2");
-        Debug.Log("3 - 测试对话段落3");
-        Debug.Log("4 - 测试对话段落4");
-        Debug.Log("0 - 测试关卡开始对话");
+        else
+        {
+            Debug.LogError("未找到 PlotManager 组件");
+        }
+    }
+    
+    private void Start()
+    {
+        // 自动测试对话加载
+        TestDialogueLoading();
     }
     
     private void Update()
