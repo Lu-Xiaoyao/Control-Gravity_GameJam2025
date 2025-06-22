@@ -119,15 +119,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CameraEnlarge"",
-                    ""type"": ""Button"",
-                    ""id"": ""39d9e72c-0761-4162-b56a-db93f92d1716"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""ResetStars"",
                     ""type"": ""Button"",
                     ""id"": ""cd07bced-a051-40a3-aa73-78517bb77a23"",
@@ -239,39 +230,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4bc1d69f-a4e7-4812-b388-6d30d920c5e2"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraEnlarge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bc9a2488-4533-4bb3-b93e-8d04c3560535"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraEnlarge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""755525f8-533a-4463-b9d3-cb86012a23fc"",
-                    ""path"": ""<XInputController>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraEnlarge"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ad92c866-899f-4089-9433-19aaa724a54c"",
                     ""path"": ""<Keyboard>/t"",
                     ""interactions"": """",
@@ -308,6 +266,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Next"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab3251df-0031-4d70-a931-0fcf784f4def"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -319,7 +288,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_player_ShowArea = m_player.FindAction("ShowArea", throwIfNotFound: true);
         m_player_ResetPosition = m_player.FindAction("ResetPosition", throwIfNotFound: true);
         m_player_SpeedUp = m_player.FindAction("SpeedUp", throwIfNotFound: true);
-        m_player_CameraEnlarge = m_player.FindAction("CameraEnlarge", throwIfNotFound: true);
         m_player_ResetStars = m_player.FindAction("ResetStars", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -408,7 +376,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_player_ShowArea;
     private readonly InputAction m_player_ResetPosition;
     private readonly InputAction m_player_SpeedUp;
-    private readonly InputAction m_player_CameraEnlarge;
     private readonly InputAction m_player_ResetStars;
     /// <summary>
     /// Provides access to input actions defined in input action map "player".
@@ -433,10 +400,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "player/SpeedUp".
         /// </summary>
         public InputAction @SpeedUp => m_Wrapper.m_player_SpeedUp;
-        /// <summary>
-        /// Provides access to the underlying input action "player/CameraEnlarge".
-        /// </summary>
-        public InputAction @CameraEnlarge => m_Wrapper.m_player_CameraEnlarge;
         /// <summary>
         /// Provides access to the underlying input action "player/ResetStars".
         /// </summary>
@@ -476,9 +439,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @SpeedUp.started += instance.OnSpeedUp;
             @SpeedUp.performed += instance.OnSpeedUp;
             @SpeedUp.canceled += instance.OnSpeedUp;
-            @CameraEnlarge.started += instance.OnCameraEnlarge;
-            @CameraEnlarge.performed += instance.OnCameraEnlarge;
-            @CameraEnlarge.canceled += instance.OnCameraEnlarge;
             @ResetStars.started += instance.OnResetStars;
             @ResetStars.performed += instance.OnResetStars;
             @ResetStars.canceled += instance.OnResetStars;
@@ -502,9 +462,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @SpeedUp.started -= instance.OnSpeedUp;
             @SpeedUp.performed -= instance.OnSpeedUp;
             @SpeedUp.canceled -= instance.OnSpeedUp;
-            @CameraEnlarge.started -= instance.OnCameraEnlarge;
-            @CameraEnlarge.performed -= instance.OnCameraEnlarge;
-            @CameraEnlarge.canceled -= instance.OnCameraEnlarge;
             @ResetStars.started -= instance.OnResetStars;
             @ResetStars.performed -= instance.OnResetStars;
             @ResetStars.canceled -= instance.OnResetStars;
@@ -665,13 +622,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSpeedUp(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "CameraEnlarge" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnCameraEnlarge(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "ResetStars" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

@@ -1,43 +1,43 @@
 ﻿#,1,0
-系统提示,警告！前方检测到众多星体，引力场混乱程度：无法计算。对飞船航线的影响：无法计算。请小心驾驶。,
-队友,怎么办，我们已经在这片莫名其妙的星域被困了两天了，到底什么时候才能走出去？,
-主角,我……好像可以试着去改变这些星球的引力？,
+System Prompt, Warning! Numerous celestial bodies detected ahead, gravitational field disturbance level: cannot calculate. Impact on spaceship's trajectory: cannot calculate. Please drive carefully.,
+Shi Zhenyue, What should we do? We've been trapped in this bizarre star domain for two days now, when will we be able to get out?,
+Su Yunheng, I... I think I can try to change the gravity of these planets?,
 #,1,1
-心底的梦魇,就凭你，还想做英雄？你忘了吗，人类与妖精本不应该相爱，像你这样的半妖，更是从一开始就不该存在！,
-主角,集中精神，不要胡思乱想……,
-%,按下F，利用法术看见星球的引力场,
-%,点击星球，削弱引力，与自身达成平衡；再次点击，甚至可以反转重力，将自身推送出去,
-%,智能系统将保护探险者不受到真正的伤害。遇到意外可以按空格键重置自身位置,
+Inner Nightmare, With you, do you still want to be a hero? Have you forgotten? Humans and fairies should never fall in love. Someone like you, a half-demon, should never have existed from the start!,
+Su Yunheng, Focus, don't think too much...,
+%, Press F to use magic to see the gravitational field of the planets,
+%, Click on the planet to weaken gravity and achieve balance with yourself; click again to even reverse gravity, propelling yourself outward,
+%, The intelligent system will protect the explorer from real harm. In case of an accident, press the space bar to reset your position,
 #,1,2
-主角的心声,你们的掌管物都是一些不可名状的抽象概念，你的能力更是连自己都无法掌控，只会给身边的人带去灾难！,
-主角,不……他们说过，不是这样的。,
+Su Yunheng's Inner Voice, The things you control are some indescribable abstract concepts, your abilities are beyond your control, and only bring disaster to those around you!,
+Su Yunheng, No... they said it’s not like this.,
 #,1,3
-友人,看，前面就是出口了！,
+Jiang Qingzhou, Look, the exit is ahead!,
 #,2,0
-主角,我……做到了？前面还有更加复杂的乱流，保存这样的节奏……,
-主角,深呼吸，感受妖力的流转，接纳它，而非排斥它，就像父亲说的那样……,
-主角的心声,你只是想接住一只掉落的玻璃杯，却把整个屋子弄得一团糟。你渴望拥抱，却险些让挚友从天台坠落。,
-%,叠加的引力场，可能带来各种难以预料的效果,
+Su Yunheng, I... did it? There's even more complicated turbulence ahead, maintaining this pace...,
+Su Yunheng, Take a deep breath, feel the flow of demonic power, accept it, instead of rejecting it, just like my father said...,
+Su Yunheng's Inner Voice, You just wanted to catch a falling glass, but ended up making the whole room a mess. You longed for an embrace, but almost made your best friend fall off the rooftop.,
+%, The overlapping gravitational fields may cause various unpredictable effects,
 #,2,1
-友人,是那边那颗……星星？好紊乱的力场，似乎是它干扰封锁了通道？,
-友人,如果能把它嵌入南方向的那个能量场，也许就能抑制它的辐射？,
-%,如果发生意外，点击“星星”或按T均可使其回归原始位置,
+Jiang Qingzhou, Is it that star over there? The force field is so chaotic, seems like it's blocking the passage?,
+Jiang Qingzhou, If we could embed it into the energy field to the south, maybe we could suppress its radiation?,
+%, If an accident occurs, click "star" or press T to return it to its original position,
 #,2,2
-主角,每个星球都有自己的引力轨迹，只要把它们连接起来，拼成道路……,
-友人,洛洛，你还撑得住吗？你的脸色看起来不太好……,
+Su Yunheng, Each planet has its own gravitational trajectory, as long as we connect them, we can form a path...,
+Jiang Qingzhou, Luo Luo, can you still hold on? You look unwell...,
 #,3,0
-主角,我快坚持不住了……出口到底在哪里？,
-梦魇,每个人都惧怕你，你就该永远独自躲在无人的角落里。,
+Su Yunheng, I can't hold on much longer... where is the exit?,
+Inner Nightmare, Everyone is afraid of you, you should forever hide alone in a deserted corner.,
 #,3,1
-梦魇,看到你的无力了吗，你无法操纵眼前那个星球的引力。,
+Inner Nightmare, Do you see your helplessness? You cannot control the gravity of the planet before you.,
 #,3,2
-主角,这不对……不能失控……冷静下来——！,
-梦魇,你依然会像曾经无数次那样，你畏惧你的力量，你厌恶你自己，你什么都做不到！,
+Su Yunheng, This isn't right... I can't lose control... Calm down—!,
+Inner Nightmare, You will still be like countless times before, you fear your power, you loathe yourself, you can't do anything!,
 #,4,0
-同学,操控重力的能力？哇，听起来就很酷！,
+Classmate, The ability to control gravity? Wow, that sounds really cool!,
 #,4,1
-母亲,与众不同多好啊，那意味着你能做到其他人都做不到的事情。,
+Mother, Isn't it great to be different? That means you can do things that others can’t.,
 #,4,2
-队友,是诅咒还是祝福，全凭你的一念之间；但接纳自己，总是让改变发生的第一步。,
+Teammate, Is it a curse or a blessing? It all depends on your thoughts; but accepting yourself is always the first step towards change.,
 #,4,3
-主角,没错，重力是我的掌管物，我生来便属于一场伟大的探险，属于这浩渺的太空！,
+Su Yunheng, That's right, gravity is my domain, I was born for a grand adventure, for this vast space!,

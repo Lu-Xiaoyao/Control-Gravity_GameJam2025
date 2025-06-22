@@ -292,7 +292,7 @@ public class PlanetPreviewEditor : Editor
                 gravityColliderRadius = settings.gravityColliderRadius;
                 planetColliderOffset = settings.planetColliderOffset;
                 gravityColliderOffset = settings.gravityColliderOffset;
-                // 碰撞效果和控制性设置不从全局设置加载，保持当前值
+                // 碰撞效果和控制性设置从当前星球加载，不从全局设置加载
             }
             else
             {
@@ -302,6 +302,33 @@ public class PlanetPreviewEditor : Editor
                 planetColliderOffset = Vector2.zero;
                 gravityColliderOffset = Vector2.zero;
                 // 碰撞效果和控制性设置保持当前值，不重置
+            }
+            
+            // 从当前星球加载碰撞效果和控制性设置
+            var touchEffectTypeField = typeof(PlanetCustom).GetField("touchEffectType", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var isControllableField = typeof(PlanetCustom).GetField("isControllable", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            
+            if (touchEffectTypeField != null)
+            {
+                touchEffectType = (TouchEffectType)touchEffectTypeField.GetValue(planetCustom);
+            }
+            if (isControllableField != null)
+            {
+                isControllable = (bool)isControllableField.GetValue(planetCustom);
+            }
+            
+            // 从TouchEffect组件加载控制对象
+            TouchEffect touchEffect = planetCustom.GetComponent<TouchEffect>();
+            if (touchEffect != null)
+            {
+                var controlledObjectField = typeof(TouchEffect).GetField("controlledObject", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (controlledObjectField != null)
+                {
+                    controlledObject = (GameObject)controlledObjectField.GetValue(touchEffect);
+                }
             }
         }
     }
@@ -470,25 +497,27 @@ public class PlanetPreviewEditor : Editor
             
             // 更新TouchEffect组件
             TouchEffect touchEffect = planetCustom.GetComponent<TouchEffect>();
-            if (touchEffect != null)
+            if (touchEffect == null)
             {
-                // 使用反射更新TouchEffect组件的设置
-                var touchEffectTypeField2 = typeof(TouchEffect).GetField("touchEffectType", 
-                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                var controlledObjectField = typeof(TouchEffect).GetField("controlledObject", 
-                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                
-                if (touchEffectTypeField2 != null)
-                {
-                    touchEffectTypeField2.SetValue(touchEffect, touchEffectType);
-                }
-                if (controlledObjectField != null)
-                {
-                    controlledObjectField.SetValue(touchEffect, controlledObject);
-                }
-                
-                EditorUtility.SetDirty(touchEffect);
+                touchEffect = planetCustom.gameObject.AddComponent<TouchEffect>();
             }
+            
+            // 使用反射更新TouchEffect组件的设置
+            var touchEffectTypeField2 = typeof(TouchEffect).GetField("touchEffectType", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var controlledObjectField = typeof(TouchEffect).GetField("controlledObject", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            
+            if (touchEffectTypeField2 != null)
+            {
+                touchEffectTypeField2.SetValue(touchEffect, touchEffectType);
+            }
+            if (controlledObjectField != null)
+            {
+                controlledObjectField.SetValue(touchEffect, controlledObject);
+            }
+            
+            EditorUtility.SetDirty(touchEffect);
             
             // 标记为已修改
             EditorUtility.SetDirty(planetCustom);

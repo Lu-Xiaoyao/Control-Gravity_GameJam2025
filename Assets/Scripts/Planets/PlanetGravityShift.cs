@@ -9,12 +9,18 @@ public class PlanetGravityShift : MonoBehaviour, IPointerDownHandler
     private SpriteRenderer balancedEffect;
     private SpriteRenderer excludeEffect;
     private bool isControllable = true;
+    private AudioSource attract;
+    private AudioSource exclude;
+    private AudioSource planetShift;
     void Start()
     {
         planetGravity = transform.Find("GravityArea").GetComponent<PlanetGravity>();
         balancedEffect = transform.Find("BalancedEffect").GetComponent<SpriteRenderer>();
         excludeEffect = transform.Find("ExcludeEffect").GetComponent<SpriteRenderer>();
         isControllable = GetComponent<PlanetCustom>().isControllable;
+        attract = GameObject.Find("Audio/Attract").GetComponent<AudioSource>();
+        exclude = GameObject.Find("Audio/Exclude").GetComponent<AudioSource>();
+        planetShift = GameObject.Find("Audio/PlanetShift").GetComponent<AudioSource>();
     }
 
    public void OnPointerDown(PointerEventData eventData)
@@ -43,6 +49,15 @@ public class PlanetGravityShift : MonoBehaviour, IPointerDownHandler
         {
             balancedEffect.enabled = false;
             excludeEffect.enabled = false;
+        }
+        planetShift.Play();
+        if(planetGravity.gravityState == GravityState.Attract)
+        {
+            attract.Play();
+        }
+        else if(planetGravity.gravityState == GravityState.Exclude)
+        {
+            exclude.Play();
         }
    }
 }

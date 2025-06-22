@@ -77,11 +77,20 @@ public class PlanetCustom : MonoBehaviour
         //设置大小和重力
         transform.localScale = new Vector3(planetSize, planetSize, 1);
         transform.Find("GravityArea").localScale = new Vector3(gravitySize, gravitySize, 1);
-        gravityExtent = Random.Range(GameManager.Instance.gravityExtentMin, GameManager.Instance.gravityExtentMax);
+        
+        // 只在没有设置过的情况下才随机设置gravityExtent
+        if (gravityExtent == 1.5f) // 默认值
+        {
+            gravityExtent = Random.Range(GameManager.Instance.gravityExtentMin, GameManager.Instance.gravityExtentMax);
+        }
         //planetGravity.gravityExtent = gravityExtent;
 
         // 应用碰撞器设置
         ApplyColliderSettings();
+        
+        // 应用碰撞效果和控制性设置（保持当前值）
+        ApplyTouchEffectSettings();
+        ApplyControllableSettings();
     }
     
     /// <summary>
@@ -102,6 +111,7 @@ public class PlanetCustom : MonoBehaviour
                 gravityCollider.radius = settings.gravityColliderRadius;
                 gravityCollider.offset = settings.gravityColliderOffset;
             }
+            // 碰撞效果和控制性设置不从全局设置加载，保持当前星球的值
         }
     }
     
@@ -110,8 +120,26 @@ public class PlanetCustom : MonoBehaviour
     /// </summary>
     private void ApplyTouchEffectSettings()
     {
-        // 碰撞效果设置只对当前星球生效，不从全局设置读取
-        // 直接使用当前星球的设置
+        // 获取或添加TouchEffect组件
+        TouchEffect touchEffect = GetComponent<TouchEffect>();
+        if (touchEffect == null)
+        {
+            touchEffect = gameObject.AddComponent<TouchEffect>();
+        }
+        
+        // 使用反射设置TouchEffect组件的属性
+        var touchEffectTypeField = typeof(TouchEffect).GetField("touchEffectType", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        var controlledObjectField = typeof(TouchEffect).GetField("controlledObject", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        
+        if (touchEffectTypeField != null)
+        {
+            touchEffectTypeField.SetValue(touchEffect, touchEffectType);
+        }
+        
+        // 注意：controlledObject需要从编辑器传入，这里暂时不设置
+        // 如果需要，可以通过其他方式传递
     }
     
     /// <summary>
@@ -119,8 +147,9 @@ public class PlanetCustom : MonoBehaviour
     /// </summary>
     private void ApplyControllableSettings()
     {
-        // 控制性设置只对当前星球生效，不从全局设置读取
-        // 直接使用当前星球的设置
+        // 控制性设置直接保存在当前星球的字段中
+        // 其他脚本可以通过访问isControllable字段来获取这个设置
+        // 这里不需要额外的操作，因为字段值已经更新了
     }
     
     /// <summary>
@@ -173,7 +202,7 @@ public class PlanetCustom : MonoBehaviour
         settings.gravityColliderRadius = gravityRadius;
         settings.planetColliderOffset = planetOffset;
         settings.gravityColliderOffset = gravityOffset;
-        // 注意：碰撞效果和控制性设置不保存到全局字典，只对当前星球生效
+        // 碰撞效果和控制性设置不保存到全局字典，只对当前星球生效
         
         // 保存到全局字典
         globalColliderSettings[imageIndex] = settings;
@@ -205,6 +234,10 @@ public class PlanetCustom : MonoBehaviour
             gravityCollider.radius = gravityRadius;
             gravityCollider.offset = gravityOffset;
         }
+        
+        // 保存碰撞效果和控制性设置到当前星球（不保存到全局字典）
+        touchEffectType = effectType;
+        isControllable = controllable;
         
         // 应用碰撞效果设置（仅对当前星球）
         ApplyTouchEffectSettings();

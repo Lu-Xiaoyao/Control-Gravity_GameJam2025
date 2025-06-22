@@ -36,6 +36,10 @@ public class InputHandle : MonoBehaviour
     {
         inputActions = new InputActions();
         inputActions.player.Enable();
+        areaShow = GameObject.Find("Player").GetComponent<AreaShow>();
+        resetPlayer = GameObject.Find("Player").GetComponent<ResetPlayer>();
+        resetStars = GameObject.Find("Player").GetComponent<ResetStars>();
+        playerSpeedUp = GameObject.Find("Player").GetComponent<PlayerSpeedUp>();
     }
 
     void Update()
@@ -61,12 +65,12 @@ public class InputHandle : MonoBehaviour
             playerSpeedUp.SpeedUp();
         }
     }
-    void OnEnabled()
-    {
-        inputActions.player.Enable();
-    }
-    void OnDisable()
-    {
-        inputActions.player.Disable();
-    }
+    //void OnEnable()
+    //{
+    //    inputActions.player.Enable();
+    //}
+    //void OnDisable()
+    //{
+    //    inputActions.player.Disable();
+    //}
 }

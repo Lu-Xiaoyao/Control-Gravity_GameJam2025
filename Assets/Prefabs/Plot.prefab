@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 1245111527333844435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6001173, y: 0.6001173, z: 0.6001173}
+  m_LocalScale: {x: 1.3165654, y: 1.3165654, z: 1.3165654}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5331440464307707735}
@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 324.06335}
+  m_AnchoredPosition: {x: 56, y: 417}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &688380973168957174
@@ -100,7 +100,7 @@ RectTransform:
   m_GameObject: {fileID: 2250200519165680068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4523922, y: 0.4523922, z: 0.4523922}
+  m_LocalScale: {x: 0.99247915, y: 0.99247915, z: 0.99247915}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4001397184032120012}
@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -25, y: 376.56335}
+  m_AnchoredPosition: {x: 12, y: 532}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5352512694591052378
@@ -211,10 +211,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8159bf1a35c11244fa92f149bafd78cf, type: 2}
-  m_sharedMaterial: {fileID: -61856715737670379, guid: 8159bf1a35c11244fa92f149bafd78cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
+  m_sharedMaterial: {fileID: 2615456816198246305, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -345,17 +345,57 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6587\u672C"
+  m_text: "#,1,0\r\nSystem Prompt, Warning! Numerous celestial bodies detected ahead,
+    gravitational field disturbance level: cannot calculate. Impact on spaceship's
+    trajectory: cannot calculate. Please drive carefully.,\r\nShi Zhenyue, What should
+    we do? We've been trapped in this bizarre star domain for two days now, when
+    will we be able to get out?,\r\nSu Yunheng, I... I think I can try to change
+    the gravity of these planets?,\r\n#,1,1\r\nInner Nightmare, With you, do you
+    still want to be a hero? Have you forgotten? Humans and fairies should never
+    fall in love. Someone like you, a half-demon, should never have existed from
+    the start!,\r\nSu Yunheng, Focus, don't think too much...,\r\n%, Press F to use
+    magic to see the gravitational field of the planets,\r\n%, Click on the planet
+    to weaken gravity and achieve balance with yourself; click again to even reverse
+    gravity, propelling yourself outward,\r\n%, The intelligent system will protect
+    the explorer from real harm. In case of an accident, press the space bar to reset
+    your position,\r\n#,1,2\r\nSu Yunheng's Inner Voice, The things you control are
+    some indescribable abstract concepts, your abilities are beyond your control,
+    and only bring disaster to those around you!,\r\nSu Yunheng, No... they said
+    it\u2019s not like this.,\r\n#,1,3\r\nJiang Qingzhou, Look, the exit is ahead!,\r\n#,2,0\r\nSu
+    Yunheng, I... did it? There's even more complicated turbulence ahead, maintaining
+    this pace...,\r\nSu Yunheng, Take a deep breath, feel the flow of demonic power,
+    accept it, instead of rejecting it, just like my father said...,\r\nSu Yunheng's
+    Inner Voice, You just wanted to catch a falling glass, but ended up making the
+    whole room a mess. You longed for an embrace, but almost made your best friend
+    fall off the rooftop.,\r\n%, The overlapping gravitational fields may cause various
+    unpredictable effects,\r\n#,2,1\r\nJiang Qingzhou, Is it that star over there?
+    The force field is so chaotic, seems like it's blocking the passage?,\r\nJiang
+    Qingzhou, If we could embed it into the energy field to the south, maybe we could
+    suppress its radiation?,\r\n%, If an accident occurs, click \"star\" or press
+    T to return it to its original position,\r\n#,2,2\r\nSu Yunheng, Each planet
+    has its own gravitational trajectory, as long as we connect them, we can form
+    a path...,\r\nJiang Qingzhou, Luo Luo, can you still hold on? You look unwell...,\r\n#,3,0\r\nSu
+    Yunheng, I can't hold on much longer... where is the exit?,\r\nInner Nightmare,
+    Everyone is afraid of you, you should forever hide alone in a deserted corner.,\r\n#,3,1\r\nInner
+    Nightmare, Do you see your helplessness? You cannot control the gravity of the
+    planet before you.,\r\n#,3,2\r\nSu Yunheng, This isn't right... I can't lose
+    control... Calm down\u2014!,\r\nInner Nightmare, You will still be like countless
+    times before, you fear your power, you loathe yourself, you can't do anything!,\r\n#,4,0\r\nClassmate,
+    The ability to control gravity? Wow, that sounds really cool!,\r\n#,4,1\r\nMother,
+    Isn't it great to be different? That means you can do things that others can\u2019t.,\r\n#,4,2\r\nTeammate,
+    Is it a curse or a blessing? It all depends on your thoughts; but accepting yourself
+    is always the first step towards change.,\r\n#,4,3\r\nSu Yunheng, That's right,
+    gravity is my domain, I was born for a grand adventure, for this vast space!,\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8159bf1a35c11244fa92f149bafd78cf, type: 2}
-  m_sharedMaterial: {fileID: -61856715737670379, guid: 8159bf1a35c11244fa92f149bafd78cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
+  m_sharedMaterial: {fileID: 2615456816198246305, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281024112
+  m_fontColor: {r: 0.43921572, g: 0.24313727, b: 0.16862746, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -372,15 +412,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

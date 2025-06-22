@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CameraEnlarge",
-                    "type": "Button",
-                    "id": "39d9e72c-0761-4162-b56a-db93f92d1716",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ResetStars",
                     "type": "Button",
                     "id": "cd07bced-a051-40a3-aa73-78517bb77a23",
@@ -153,39 +144,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4bc1d69f-a4e7-4812-b388-6d30d920c5e2",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraEnlarge",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bc9a2488-4533-4bb3-b93e-8d04c3560535",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraEnlarge",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "755525f8-533a-4463-b9d3-cb86012a23fc",
-                    "path": "<XInputController>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraEnlarge",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ad92c866-899f-4089-9433-19aaa724a54c",
                     "path": "<Keyboard>/t",
                     "interactions": "",
@@ -216,6 +174,17 @@
                     "name": "",
                     "id": "4f2a15be-3131-43ee-895a-81ed6c2196b2",
                     "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab3251df-0031-4d70-a931-0fcf784f4def",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

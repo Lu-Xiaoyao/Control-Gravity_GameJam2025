@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 02
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9ccae5b5fdbd7046ad2ec21284c6b2c, type: 2}
-  m_sharedMaterial: {fileID: -7113382833213231366, guid: e9ccae5b5fdbd7046ad2ec21284c6b2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
+  m_sharedMaterial: {fileID: 2615456816198246305, guid: 86116c7eaa7d9c14f9554a928abbf789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -163,7 +163,7 @@ RectTransform:
   m_GameObject: {fileID: 9202795721178366451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7197474, y: 1.7197474, z: 1.7197474}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3372669758467865358}

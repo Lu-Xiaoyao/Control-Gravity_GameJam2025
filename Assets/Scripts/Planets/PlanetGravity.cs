@@ -18,6 +18,8 @@ public class PlanetGravity : MonoBehaviour
     [SerializeField] protected internal GravityState startGravityState;
     [SerializeField] protected internal Vector2 direction = Vector2.zero;
     [SerializeField] protected internal Vector2 angleDirection = Vector2.zero;
+    [SerializeField] protected internal AudioSource attract;
+    [SerializeField] protected internal AudioSource exclude;
     private Dictionary<GameObject, Transform> starPuzzle = new Dictionary<GameObject, Transform>();
     public Dictionary<GravityState, int> gravityStateDict = new Dictionary<GravityState, int>();
     void Start()
@@ -29,6 +31,8 @@ public class PlanetGravity : MonoBehaviour
             gravityStateDict.Add(GravityState.Attract, 1);
             gravityStateDict.Add(GravityState.Exclude, -1);
             gravityStateDict.Add(GravityState.Balanced, 0);
+            attract = GameObject.Find("Audio/Attract").GetComponent<AudioSource>();
+            exclude = GameObject.Find("Audio/Exclude").GetComponent<AudioSource>();
     }
     void OnTriggerEnter2D(Collider2D target)
     {
@@ -48,6 +52,14 @@ public class PlanetGravity : MonoBehaviour
             }
             target.transform.SetParent(transform);
             target.GetComponent<PlayerMove>().AddDirection(this);
+        }
+        if(gravityState == GravityState.Attract)
+        {
+            attract.Play();
+        }
+        else if(gravityState == GravityState.Exclude)
+        {
+            exclude.Play();
         }
     }
 

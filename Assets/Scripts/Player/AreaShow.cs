@@ -6,12 +6,10 @@ using UnityEngine.Events;
 public class AreaShow : MonoBehaviour
 {
     public UnityEvent onAreaShow;
-    private InputActions inputActions;
 
     void Awake()
     {
-        inputActions = new InputActions();
-        inputActions.player.Enable();
+        // 不再创建自己的InputActions实例，使用全局实例
     }
 
     public void OnAreaShow()
