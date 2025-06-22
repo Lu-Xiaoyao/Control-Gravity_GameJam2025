@@ -9,6 +9,7 @@ TagManager:
   - Star
   - StarPuzzle
   - Door
+  - StarPlace
   layers:
   - Default
   - TransparentFX

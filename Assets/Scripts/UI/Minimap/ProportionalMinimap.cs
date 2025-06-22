@@ -21,6 +21,7 @@ public class ProportionalMinimap : MonoBehaviour
     [SerializeField] private Sprite doorIconSprite;
     [SerializeField] private Sprite starIconSprite;
     [SerializeField] private Sprite trapIconSprite;
+    [SerializeField] private Sprite starPlaceIconSprite;
     [SerializeField] private float iconSize = 12f;
     
     [Header("地图范围")]
@@ -43,6 +44,7 @@ public class ProportionalMinimap : MonoBehaviour
     private List<Transform> doors = new List<Transform>();
     private List<Transform> stars = new List<Transform>();
     private List<Transform> traps = new List<Transform>();
+    private List<Transform> starPlaces = new List<Transform>();
     
     // UI元素
     private GameObject playerIcon;
@@ -50,6 +52,7 @@ public class ProportionalMinimap : MonoBehaviour
     private List<GameObject> doorIcons = new List<GameObject>();
     private List<GameObject> starIcons = new List<GameObject>();
     private List<GameObject> trapIcons = new List<GameObject>();
+    private List<GameObject> starPlaceIcons = new List<GameObject>();
     
     private Image backgroundImage;
     private RectTransform minimapRect;
@@ -227,6 +230,7 @@ public class ProportionalMinimap : MonoBehaviour
         FindObjectsWithTag("Door", doors);
         FindObjectsWithTag("Star", stars);
         FindObjectsWithTag("Trap", traps);
+        FindObjectsWithTag("StarPlace", starPlaces);
     }
     
     void FindObjectsWithTag(string tag, List<Transform> targetList)
@@ -275,7 +279,7 @@ public class ProportionalMinimap : MonoBehaviour
         backgroundObj.transform.SetParent(minimapContainer, false);
         
         backgroundImage = backgroundObj.AddComponent<Image>();
-        backgroundImage.color = backgroundColor;
+        backgroundImage.color = borderColor;
         
         RectTransform bgRect = backgroundObj.GetComponent<RectTransform>();
         bgRect.anchorMin = Vector2.zero;
@@ -288,7 +292,7 @@ public class ProportionalMinimap : MonoBehaviour
         borderObj.transform.SetParent(minimapContainer, false);
         
         Image borderImage = borderObj.AddComponent<Image>();
-        borderImage.color = borderColor;
+        borderImage.color = backgroundColor;
         
         RectTransform borderRect = borderObj.GetComponent<RectTransform>();
         borderRect.anchorMin = Vector2.zero;
@@ -353,6 +357,9 @@ public class ProportionalMinimap : MonoBehaviour
         
         // 创建陷阱图标
         CreateIconsForObjects(traps, trapIcons, trapIconSprite, Color.red);
+        
+        // 创建StarPlace图标
+        CreateIconsForObjects(starPlaces, starPlaceIcons, starPlaceIconSprite, Color.cyan);
     }
     
     void CreateIconsForObjects(List<Transform> objects, List<GameObject> iconList, Sprite iconSprite, Color defaultColor)
@@ -401,6 +408,7 @@ public class ProportionalMinimap : MonoBehaviour
         UpdateIconsForObjects(doors, doorIcons);
         UpdateIconsForObjects(stars, starIcons);
         UpdateIconsForObjects(traps, trapIcons);
+        UpdateIconsForObjects(starPlaces, starPlaceIcons);
     }
     
     void UpdateIconsForObjects(List<Transform> objects, List<GameObject> icons)
@@ -434,9 +442,17 @@ public class ProportionalMinimap : MonoBehaviour
         // 获取实际的小地图尺寸
         Vector2 actualMinimapSize = minimapRect.sizeDelta;
         
+        // 计算内部背景的尺寸
+        float innerWidth = actualMinimapSize.x - borderWidth * 2;
+        float innerHeight = actualMinimapSize.y - borderWidth * 2;
+
+        // 图标中心点可以移动的有效范围要再减去图标本身的大小
+        float movableWidth = innerWidth - iconSize;
+        float movableHeight = innerHeight - iconSize;
+
         // 将比例转换为小地图坐标
-        float minimapX = (xRatio - 0.5f) * actualMinimapSize.x;
-        float minimapY = (yRatio - 0.5f) * actualMinimapSize.y;
+        float minimapX = (xRatio - 0.5f) * movableWidth;
+        float minimapY = (yRatio - 0.5f) * movableHeight;
         
         return new Vector2(minimapX, minimapY);
     }
@@ -511,6 +527,16 @@ public class ProportionalMinimap : MonoBehaviour
             traps.Add(trap);
             GameObject icon = CreateIcon($"{trap.name}Icon", trapIconSprite, Color.red);
             trapIcons.Add(icon);
+        }
+    }
+    
+    public void AddStarPlace(Transform starPlace)
+    {
+        if (!starPlaces.Contains(starPlace))
+        {
+            starPlaces.Add(starPlace);
+            GameObject icon = CreateIcon($"{starPlace.name}Icon", starPlaceIconSprite, Color.cyan);
+            starPlaceIcons.Add(icon);
         }
     }
     

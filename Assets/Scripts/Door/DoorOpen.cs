@@ -48,6 +48,7 @@ public class DoorOpen : MonoBehaviour
 
     void NextLevel()
     {
+        AllControl.GameManager.Instance.levelComplete++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
