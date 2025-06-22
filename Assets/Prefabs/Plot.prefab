@@ -213,8 +213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
-  m_sharedMaterial: {fileID: -1805827053847505602, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cc107debbb5e4824eb2b1cfae4dfd367, type: 2}
+  m_sharedMaterial: {fileID: 2759812454460880655, guid: cc107debbb5e4824eb2b1cfae4dfd367, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -345,50 +345,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "#,1,0\r\nSystem Prompt, Warning! Numerous celestial bodies detected ahead,
-    gravitational field disturbance level: cannot calculate. Impact on spaceship's
-    trajectory: cannot calculate. Please drive carefully.,\r\nShi Zhenyue, What should
-    we do? We've been trapped in this bizarre star domain for two days now, when
-    will we be able to get out?,\r\nSu Yunheng, I... I think I can try to change
-    the gravity of these planets?,\r\n#,1,1\r\nInner Nightmare, With you, do you
-    still want to be a hero? Have you forgotten? Humans and fairies should never
-    fall in love. Someone like you, a half-demon, should never have existed from
-    the start!,\r\nSu Yunheng, Focus, don't think too much...,\r\n%, Press F to use
-    magic to see the gravitational field of the planets,\r\n%, Click on the planet
-    to weaken gravity and achieve balance with yourself; click again to even reverse
-    gravity, propelling yourself outward,\r\n%, The intelligent system will protect
-    the explorer from real harm. In case of an accident, press the space bar to reset
-    your position,\r\n#,1,2\r\nSu Yunheng's Inner Voice, The things you control are
-    some indescribable abstract concepts, your abilities are beyond your control,
-    and only bring disaster to those around you!,\r\nSu Yunheng, No... they said
-    it\u2019s not like this.,\r\n#,1,3\r\nJiang Qingzhou, Look, the exit is ahead!,\r\n#,2,0\r\nSu
-    Yunheng, I... did it? There's even more complicated turbulence ahead, maintaining
-    this pace...,\r\nSu Yunheng, Take a deep breath, feel the flow of demonic power,
-    accept it, instead of rejecting it, just like my father said...,\r\nSu Yunheng's
-    Inner Voice, You just wanted to catch a falling glass, but ended up making the
-    whole room a mess. You longed for an embrace, but almost made your best friend
-    fall off the rooftop.,\r\n%, The overlapping gravitational fields may cause various
-    unpredictable effects,\r\n#,2,1\r\nJiang Qingzhou, Is it that star over there?
-    The force field is so chaotic, seems like it's blocking the passage?,\r\nJiang
-    Qingzhou, If we could embed it into the energy field to the south, maybe we could
-    suppress its radiation?,\r\n%, If an accident occurs, click \"star\" or press
-    T to return it to its original position,\r\n#,2,2\r\nSu Yunheng, Each planet
-    has its own gravitational trajectory, as long as we connect them, we can form
-    a path...,\r\nJiang Qingzhou, Luo Luo, can you still hold on? You look unwell...,\r\n#,3,0\r\nSu
-    Yunheng, I can't hold on much longer... where is the exit?,\r\nInner Nightmare,
-    Everyone is afraid of you, you should forever hide alone in a deserted corner.,\r\n#,3,1\r\nInner
-    Nightmare, Do you see your helplessness? You cannot control the gravity of the
-    planet before you.,\r\n#,3,2\r\nSu Yunheng, This isn't right... I can't lose
-    control... Calm down\u2014!,\r\nInner Nightmare, You will still be like countless
-    times before, you fear your power, you loathe yourself, you can't do anything!,\r\n#,4,0\r\nClassmate,
-    The ability to control gravity? Wow, that sounds really cool!,\r\n#,4,1\r\nMother,
-    Isn't it great to be different? That means you can do things that others can\u2019t.,\r\n#,4,2\r\nTeammate,
-    Is it a curse or a blessing? It all depends on your thoughts; but accepting yourself
-    is always the first step towards change.,\r\n#,4,3\r\nSu Yunheng, That's right,
-    gravity is my domain, I was born for a grand adventure, for this vast space!,\r\n"
+  m_text: "#,1,0\r\n\u7CFB\u7EDF\u63D0\u793A,\u8B66\u544A\uFF01\u524D\u65B9\u68C0\u6D4B\u5230\u4F17\u591A\u661F\u4F53\uFF0C\u5F15\u529B\u573A\u6DF7\u4E71\u7A0B\u5EA6\uFF1A\u65E0\u6CD5\u8BA1\u7B97\u3002\u5BF9\u98DE\u8239\u822A\u7EBF\u7684\u5F71\u54CD\uFF1A\u65E0\u6CD5\u8BA1\u7B97\u3002\u8BF7\u5C0F\u5FC3\u9A7E\u9A76\u3002,\r\n\u77F3\u9547\u5CB3,\u600E\u4E48\u529E\uFF0C\u6211\u4EEC\u5DF2\u7ECF\u5728\u8FD9\u7247\u83AB\u540D\u5176\u5999\u7684\u661F\u57DF\u88AB\u56F0\u4E86\u4E24\u5929\u4E86\uFF0C\u5230\u5E95\u4EC0\u4E48\u65F6\u5019\u624D\u80FD\u8D70\u51FA\u53BB\uFF1F,\r\n\u65B9\u82E5\u8861,\u6211\u2026\u2026\u597D\u50CF\u53EF\u4EE5\u8BD5\u7740\u53BB\u6539\u53D8\u8FD9\u4E9B\u661F\u7403\u7684\u5F15\u529B\uFF1F,\r\n#,1,1\r\n\u5FC3\u5E95\u7684\u6742\u97F3,\u5C31\u51ED\u4F60\uFF0C\u8FD8\u60F3\u505A\u82F1\u96C4\uFF1F\u4F60\u5FD8\u4E86\u5417\uFF0C\u4EBA\u7C7B\u4E0E\u5996\u7CBE\u672C\u4E0D\u5E94\u8BE5\u76F8\u7231\uFF0C\u50CF\u4F60\u8FD9\u6837\u7684\u534A\u5996\uFF0C\u66F4\u662F\u4ECE\u4E00\u5F00\u59CB\u5C31\u4E0D\u8BE5\u5B58\u5728\uFF01,\r\n\u65B9\u82E5\u8861,\u96C6\u4E2D\u7CBE\u795E\uFF0C\u4E0D\u8981\u80E1\u601D\u4E71\u60F3\u2026\u2026,\r\n%,\u6309\u4E0BF\uFF0C\u5229\u7528\u6CD5\u672F\u770B\u89C1\u661F\u7403\u7684\u5F15\u529B\u573A,\r\n%,\u70B9\u51FB\u661F\u7403\uFF0C\u524A\u5F31\u5F15\u529B\uFF0C\u4E0E\u81EA\u8EAB\u8FBE\u6210\u5E73\u8861\uFF1B\u518D\u6B21\u70B9\u51FB\uFF0C\u751A\u81F3\u53EF\u4EE5\u53CD\u8F6C\u91CD\u529B\uFF0C\u5C06\u81EA\u8EAB\u63A8\u9001\u51FA\u53BB,\r\n%,\u667A\u80FD\u7CFB\u7EDF\u5C06\u4FDD\u62A4\u63A2\u9669\u8005\u4E0D\u53D7\u5230\u771F\u6B63\u7684\u4F24\u5BB3\u3002\u9047\u5230\u610F\u5916\u53EF\u4EE5\u6309\u7A7A\u683C\u952E\u91CD\u7F6E\u81EA\u8EAB\u4F4D\u7F6E,\r\n#,1,2\r\n\u5FC3\u5E95\u7684\u6742\u97F3,\u4F60\u4EEC\u7684\u638C\u7BA1\u7269\u90FD\u662F\u4E00\u4E9B\u4E0D\u53EF\u540D\u72B6\u7684\u62BD\u8C61\u6982\u5FF5\uFF0C\u4F60\u7684\u80FD\u529B\u66F4\u662F\u8FDE\u81EA\u5DF1\u90FD\u65E0\u6CD5\u638C\u63A7\uFF0C\u53EA\u4F1A\u7ED9\u8EAB\u8FB9\u7684\u4EBA\u5E26\u53BB\u707E\u96BE\uFF01,\r\n\u65B9\u82E5\u8861,\u4E0D\u2026\u2026\u4ED6\u4EEC\u8BF4\u8FC7\uFF0C\u4E0D\u662F\u8FD9\u6837\u7684\u3002,\r\n#,1,3\r\n\u6C5F\u6674\u663C,\u770B\uFF0C\u524D\u9762\u5C31\u662F\u51FA\u53E3\u4E86\uFF01,\r\n#,2,0\r\n\u65B9\u82E5\u8861,\u6211\u2026\u2026\u505A\u5230\u4E86\uFF1F\u524D\u9762\u8FD8\u6709\u66F4\u52A0\u590D\u6742\u7684\u4E71\u6D41\uFF0C\u4FDD\u5B58\u8FD9\u6837\u7684\u8282\u594F\u2026\u2026,\r\n\u65B9\u82E5\u8861,\u6DF1\u547C\u5438\uFF0C\u611F\u53D7\u5996\u529B\u7684\u6D41\u8F6C\uFF0C\u63A5\u7EB3\u5B83\uFF0C\u800C\u975E\u6392\u65A5\u5B83\uFF0C\u5C31\u50CF\u7236\u4EB2\u8BF4\u7684\u90A3\u6837\u2026\u2026,\r\n\u5FC3\u5E95\u7684\u6742\u97F3,\u4F60\u53EA\u662F\u60F3\u63A5\u4F4F\u4E00\u53EA\u6389\u843D\u7684\u73BB\u7483\u676F\uFF0C\u5374\u628A\u6574\u4E2A\u5C4B\u5B50\u5F04\u5F97\u4E00\u56E2\u7CDF\u3002\u4F60\u6E34\u671B\u62E5\u62B1\uFF0C\u5374\u9669\u4E9B\u8BA9\u631A\u53CB\u4ECE\u5929\u53F0\u5760\u843D\u3002,\r\n%,\u53E0\u52A0\u7684\u5F15\u529B\u573A\uFF0C\u53EF\u80FD\u5E26\u6765\u5404\u79CD\u96BE\u4EE5\u9884\u6599\u7684\u6548\u679C,\r\n#,2,1\r\n\u6C5F\u6674\u663C,\u662F\u90A3\u8FB9\u90A3\u9897\u2026\u2026\u661F\u661F\uFF1F\u597D\u7D0A\u4E71\u7684\u529B\u573A\uFF0C\u4F3C\u4E4E\u662F\u5B83\u5E72\u6270\u5C01\u9501\u4E86\u901A\u9053\uFF1F,\r\n\u6C5F\u6674\u663C,\u5982\u679C\u80FD\u628A\u5B83\u5D4C\u5165\u5357\u65B9\u5411\u7684\u90A3\u4E2A\u80FD\u91CF\u573A\uFF0C\u4E5F\u8BB8\u5C31\u80FD\u6291\u5236\u5B83\u7684\u8F90\u5C04\uFF1F,\r\n%,\u5982\u679C\u53D1\u751F\u610F\u5916\uFF0C\u70B9\u51FB\"\u661F\u661F\"\u6216\u6309T\u5747\u53EF\u4F7F\u5176\u56DE\u5F52\u539F\u59CB\u4F4D\u7F6E,\r\n#,2,2\r\n\u65B9\u82E5\u8861,\u6BCF\u4E2A\u661F\u7403\u90FD\u6709\u81EA\u5DF1\u7684\u5F15\u529B\u8F68\u8FF9\uFF0C\u53EA\u8981\u628A\u5B83\u4EEC\u8FDE\u63A5\u8D77\u6765\uFF0C\u62FC\u6210\u9053\u8DEF\u2026\u2026,\r\n\u6C5F\u6674\u663C,\u6D1B\u6D1B\uFF0C\u4F60\u8FD8\u6491\u5F97\u4F4F\u5417\uFF1F\u4F60\u7684\u8138\u8272\u770B\u8D77\u6765\u4E0D\u592A\u597D\u2026\u2026,\r\n#,3,0\r\n\u65B9\u82E5\u8861,\u6211\u5FEB\u575A\u6301\u4E0D\u4F4F\u4E86\u2026\u2026\u51FA\u53E3\u5230\u5E95\u5728\u54EA\u91CC\uFF1F,\r\n\u5FC3\u5E95\u7684\u6742\u97F3,\u6BCF\u4E2A\u4EBA\u90FD\u60E7\u6015\u4F60\uFF0C\u4F60\u5C31\u8BE5\u6C38\u8FDC\u72EC\u81EA\u8EB2\u5728\u65E0\u4EBA\u7684\u89D2\u843D\u91CC\u3002,\r\n#,3,1\r\n\u5FC3\u5E95\u7684\u6742\u97F3,\u770B\u5230\u4F60\u7684\u65E0\u529B\u4E86\u5417\uFF0C\u4F60\u65E0\u6CD5\u64CD\u7EB5\u773C\u524D\u90A3\u4E2A\u661F\u7403\u7684\u5F15\u529B\u3002,\r\n#,3,2\r\n\u65B9\u82E5\u8861,\u8FD9\u4E0D\u5BF9\u2026\u2026\u4E0D\u80FD\u5931\u63A7\u2026\u2026\u51B7\u9759\u4E0B\u6765\u2014\u2014\uFF01,\r\n\u5FC3\u5E95\u7684\u6742\u97F3,\u4F60\u4F9D\u7136\u4F1A\u50CF\u66FE\u7ECF\u65E0\u6570\u6B21\u90A3\u6837\uFF0C\u4F60\u754F\u60E7\u4F60\u7684\u529B\u91CF\uFF0C\u4F60\u538C\u6076\u4F60\u81EA\u5DF1\uFF0C\u4F60\u4EC0\u4E48\u90FD\u505A\u4E0D\u5230\uFF01,\r\n#,4,0\r\n\u540C\u5B66,\u64CD\u63A7\u91CD\u529B\u7684\u80FD\u529B\uFF1F\u54C7\uFF0C\u542C\u8D77\u6765\u5C31\u5F88\u9177\uFF01,\r\n#,4,1\r\n\u6BCD\u4EB2,\u4E0E\u4F17\u4E0D\u540C\u591A\u597D\u554A\uFF0C\u90A3\u610F\u5473\u7740\u4F60\u80FD\u505A\u5230\u5176\u4ED6\u4EBA\u90FD\u505A\u4E0D\u5230\u7684\u4E8B\u60C5\u3002,\r\n#,4,2\r\n\u961F\u53CB,\u662F\u8BC5\u5492\u8FD8\u662F\u795D\u798F\uFF0C\u5168\u51ED\u4F60\u7684\u4E00\u5FF5\u4E4B\u95F4\uFF1B\u4F46\u63A5\u7EB3\u81EA\u5DF1\uFF0C\u603B\u662F\u8BA9\u6539\u53D8\u53D1\u751F\u7684\u7B2C\u4E00\u6B65\u3002,\r\n#,4,3\r\n\u65B9\u82E5\u8861,\u6CA1\u9519\uFF0C\u91CD\u529B\u662F\u6211\u7684\u638C\u7BA1\u7269\uFF0C\u6211\u751F\u6765\u4FBF\u5C5E\u4E8E\u4E00\u573A\u4F1F\u5927\u7684\u63A2\u9669\uFF0C\u5C5E\u4E8E\u8FD9\u6D69\u6E3A\u7684\u592A\u7A7A\uFF01,"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
-  m_sharedMaterial: {fileID: -1805827053847505602, guid: ddd690ca6140b164da562c0e473e174b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cc107debbb5e4824eb2b1cfae4dfd367, type: 2}
+  m_sharedMaterial: {fileID: 2759812454460880655, guid: cc107debbb5e4824eb2b1cfae4dfd367, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
