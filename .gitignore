@@ -45,3 +45,5 @@ Assets/AddressableAssetsData/*/AssetGroups/*/StreamingAssetsCopy.cache
 
 # Ignore user-specific settings
 ProjectSettings/ProjectVersion.txt
+
+.vs/
